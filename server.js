@@ -78,6 +78,11 @@ app.get('/compatibility', (req, res) => {
     const userRising = { element: elements[r] }; // Same here
 
     const results = calculateCompatibility(userSun, userMoon, userRising);
+
+    // Print all compatibility results to the terminal
+    console.log('Compatibility results:', results);
+
+    // Send the most compatible result (or the top match)
     res.json(results);
 });
 
