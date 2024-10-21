@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Futura;
     background-color: #f4f4f4;
     color: #333;
     padding-bottom: 2rem;
@@ -34,7 +34,8 @@ header {
 }
 
 .secondary-header h2 {
-    font-size: 1.5rem; /* Adjust size as needed */
+    font-size: 1rem;
+    font-weight: 100;
     color: #333; /* Color can be adjusted */
     margin-right: auto; /* This will push the dropdown to the right */
 }
