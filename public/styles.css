@@ -1,5 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #f0f0f0;
-    color: #333;
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding-bottom: 2rem;
+}
+
+header {
+    background-color: #000000;
+    color: #FFCE2E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem;
+}
+
+.container {
+    padding-top: 20px;
+}
+
+.secondary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff; /* You can adjust this color */
+    padding: 1rem;
+    border-bottom: 1px solid #ddd; /* Optional, for separation */
+}
+
+.secondary-header h2 {
+    font-size: 1.5rem; /* Adjust size as needed */
+    color: #333; /* Color can be adjusted */
+    margin-right: auto; /* This will push the dropdown to the right */
+}
+
+.secondary-header select {
+    margin-left: auto; /* Align to the right */
 }
