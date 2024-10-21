@@ -5,30 +5,34 @@ document.getElementById('compatibility-form').addEventListener('submit', functio
     const moonSign = document.getElementById('moon-sign').value;
     const risingSign = document.getElementById('rising-sign').value;
 
-    // Assuming you will define the degrees somewhere; otherwise, use dummy values
-    const sunDegree = 0;  // You need to replace this with actual logic for degrees
-    const moonDegree = 0;  // You need to replace this with actual logic for degrees
-    const risingDegree = 0;  // You need to replace this with actual logic for degrees
-
     fetch(`/compatibility?s=${sunSign}&m=${moonSign}&r=${risingSign}`)
         .then(response => response.json())
         .then(data => {
             // Sort the data array based on the score, in descending order
             data.sort((a, b) => b.score - a.score);
 
-            // Display only the most compatible person (hide the score)
+            // Display only the most compatible team
             const resultsDiv = document.getElementById('results');
             resultsDiv.innerHTML = '';  // Clear previous results
 
             if (data.length > 0) {
-                const topMatch = data[0];  // Get the most compatible person
+                const topMatch = data[0];  // Get the most compatible team
+                const teamName = topMatch.name;  // The team name
+
+                // Display the text result
                 const topMatchElement = document.createElement('div');
-                topMatchElement.innerText = `Your team is the ${topMatch.name}`;  // Hide the score, only show the name
+                topMatchElement.innerText = `Your team is the ${teamName}`;
                 resultsDiv.appendChild(topMatchElement);
+
+                // Display the team image (converting team name to lowercase)
+                const imageElement = document.createElement('img');
+                imageElement.src = `./images/${teamName.toLowerCase()}.png`;  // Assuming the image files are in a folder named 'images'
+                imageElement.alt = `${teamName} logo`;  // Alt text for accessibility
+                resultsDiv.appendChild(imageElement);  // Add the image to the results div
             }
 
             // (Optional) Log other results or do nothing with them
-            // The following part just hides the other results from the user
         })
         .catch(error => console.error('Error:', error));
 });
+
