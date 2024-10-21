@@ -9,6 +9,7 @@ body {
     background-color: #f4f4f4;
     color: #333;
     padding-bottom: 2rem;
+    text-align: center;
 }
 
 header {
@@ -21,7 +22,7 @@ header {
 }
 
 .container {
-    padding-top: 20px;
+    padding: 20px;
 }
 
 .secondary-header {
@@ -42,4 +43,19 @@ header {
 
 .secondary-header select {
     margin-left: auto; /* Align to the right */
+}
+
+select {
+    font-family: Futura;
+}
+
+button {
+    font-family: Futura;
+    background-color: #FFCE2E;
+    padding: 5px;
+    font-size: 1.3rem;
+}
+
+label {
+    font-size: 1.3rem;
 }
