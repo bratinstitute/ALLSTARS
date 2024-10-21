@@ -29,7 +29,7 @@ const signs = [
     { name: "Tigers", sun: { sign: "Taurus" }, moon: { sign: "Leo" }, rising: { sign: "Leo" }},
     { name: "Cardinals", sun: { sign: "Taurus" }, moon: { sign: "Taurus" }, rising: { sign: "Leo" }},
     { name: "Phillies", sun: { sign: "Taurus" }, moon: { sign: "Aquarius" }, rising: { sign: "Leo" }},
-    { name: "A's", sun: { sign: "Taurus" }, moon: { sign: "Aries" }, rising: { sign: "Virgo" }},
+    { name: "Athletics", sun: { sign: "Taurus" }, moon: { sign: "Aries" }, rising: { sign: "Virgo" }},
     { name: "Padres", sun: { sign: "Gemini" }, moon: { sign: "Gemini" }, rising: { sign: "Gemini" }},
     { name: "Giants", sun: { sign: "Gemini" }, moon: { sign: "Taurus" }, rising: { sign: "Libra" }},
     { name: "Marlins", sun: { sign: "Gemini" }, moon: { sign: "Taurus" }, rising: { sign: "Virgo" }},
