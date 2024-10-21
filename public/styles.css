@@ -25,6 +25,16 @@ header {
     padding: 20px;
 }
 
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
+    gap: 10px; /* Adjust the spacing between the items */
+    justify-items: center; /* Center the items horizontally in their columns */
+    align-items: center; /* Center the items vertically in their grid area */
+    width: 100%;
+}
+
+
 .secondary-header {
     display: flex;
     justify-content: space-between;
@@ -57,9 +67,5 @@ button {
 }
 
 label {
-    font-size: 1.3rem;
-}
-
-.results {
     font-size: 1.3rem;
 }
