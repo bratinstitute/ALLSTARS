@@ -26,8 +26,8 @@ document.getElementById('compatibility-form').addEventListener('submit', functio
 
                 // Display the team image (converting team name to lowercase)
                 const imageElement = document.createElement('img');
-                imageElement.src = `./images/${teamName.toLowerCase()}.png`;  // Assuming the image files are in a folder named 'images'
-                imageElement.alt = `${teamName} logo`;  // Alt text for accessibility
+                imageElement.src = `./images/teams/${teamName.toLowerCase()}.jpg`;  // Assuming the image files are in a folder named 'images'
+                imageElement.alt = `${teamName}`;
                 resultsDiv.appendChild(imageElement);  // Add the image to the results div
             }
 

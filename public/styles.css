@@ -69,3 +69,10 @@ button {
 label {
     font-size: 1.3rem;
 }
+
+/* Ensure the result image is 40% of the screen width */
+#results img {
+    width: 40%;
+    display: block;
+    margin: 20px auto; /* Center the image horizontally */
+}
