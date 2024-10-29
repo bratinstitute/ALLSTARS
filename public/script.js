@@ -4,35 +4,28 @@ document.getElementById('compatibility-form').addEventListener('submit', functio
     const sunSign = document.getElementById('sun-sign').value;
     const moonSign = document.getElementById('moon-sign').value;
     const risingSign = document.getElementById('rising-sign').value;
+    const email = document.getElementById('email').value;
 
-    fetch(`/compatibility?s=${sunSign}&m=${moonSign}&r=${risingSign}`)
-        .then(response => response.json())
-        .then(data => {
-            // Sort the data array based on the score, in descending order
-            data.sort((a, b) => b.score - a.score);
+    // Check if email is provided
+    if (!email) {
+        alert("Please enter your email address to receive the results.");
+        return;
+    }
 
-            // Display only the most compatible team
-            const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = '';  // Clear previous results
-
-            if (data.length > 0) {
-                const topMatch = data[0];  // Get the most compatible team
-                const teamName = topMatch.name;  // The team name
-
-                // Display the text result
-                const topMatchElement = document.createElement('div');
-                topMatchElement.innerText = `Your team is the ${teamName}`;
-                resultsDiv.appendChild(topMatchElement);
-
-                // Display the team image (converting team name to lowercase)
-                const imageElement = document.createElement('img');
-                imageElement.src = `./images/teams/${teamName.toLowerCase()}.jpg`;  // Assuming the image files are in a folder named 'images'
-                imageElement.alt = `${teamName}`;
-                resultsDiv.appendChild(imageElement);  // Add the image to the results div
+    fetch(`/compatibility?s=${sunSign}&m=${moonSign}&r=${risingSign}&email=${email}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
             }
-
-            // (Optional) Log other results or do nothing with them
+            return response.json();
         })
-        .catch(error => console.error('Error:', error));
+        .then(data => {
+            // Display compatibility result in HTML
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `Your team is the ${data[0].name}`;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was an issue submitting your form. Please try again.');
+        });
 });
-

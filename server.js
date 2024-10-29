@@ -1,10 +1,13 @@
+require('dotenv').config();
 const express = require('express');
-const path = require('path'); // Import path module for serving files
+const nodemailer = require('nodemailer');
+const path = require('path'); 
+
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(express.static('public')); // Serve static files from the 'public' directory
+app.use(express.static('public')); 
 
 const elements = {
     "Leo": "Fire", "Sagittarius": "Fire", "Aries": "Fire",
@@ -46,49 +49,61 @@ const signs = [
     { name: "Red Sox", sun: { sign: "Sagittarius" }, moon: { sign: "Gemini" }, rising: { sign: "Aries" }}
 ];
 
-// Removed degree-related functions
-
 const calculateElementCompatibility = (element1, element2) => {
-    if (element1 === element2) return 1.0; // Perfect match
-    if ((element1 === "Fire" && element2 === "Air") || (element1 === "Earth" && element2 === "Water")) return 0.75; // Compatible
-    return 0.5; // Less compatible
+    if (element1 === element2) return 1.0;
+    if ((element1 === "Fire" && element2 === "Air") || (element1 === "Earth" && element2 === "Water")) return 0.75;
+    return 0.5;
 };
 
-// Updated compatibility function without degree calculations
 const calculateCompatibility = (userSun, userMoon, userRising) => {
     return signs.map(person => {
-        // Using elements directly for compatibility scores
         const sunElementBonus = calculateElementCompatibility(userSun.element, elements[person.sun.sign]);
         const moonElementBonus = calculateElementCompatibility(userMoon.element, elements[person.moon.sign]);
         const risingElementBonus = calculateElementCompatibility(userRising.element, elements[person.rising.sign]);
 
-        // Set a base score based on element compatibility
         const totalScore = (sunElementBonus * 0.5) + (moonElementBonus * 0.3) + (risingElementBonus * 0.2);
-
-        // Normalize to a 0-100 scale
         return { name: person.name, score: Math.round(totalScore * 100) };
-    }).sort((a, b) => b.score - a.score); // Sort by highest compatibility
+    }).sort((a, b) => b.score - a.score);
 };
 
-app.get('/compatibility', (req, res) => {
-    const { s, m, r } = req.query; // Get parameters from the query string
-
-    const userSun = { element: elements[s] }; // Only element is necessary
-    const userMoon = { element: elements[m] }; // Same here
-    const userRising = { element: elements[r] }; // Same here
-
-    const results = calculateCompatibility(userSun, userMoon, userRising);
-
-    // Print all compatibility results to the terminal
-    console.log('Compatibility results:', results);
-
-    // Send the most compatible result (or the top match)
-    res.json(results);
+// Email setup
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+    }
 });
 
-// Serve the index.html file when accessing the root URL
+app.get('/compatibility', (req, res) => {
+    const { s, m, r, email } = req.query;
+
+    const userSun = { element: elements[s] };
+    const userMoon = { element: elements[m] };
+    const userRising = { element: elements[r] };
+
+    const results = calculateCompatibility(userSun, userMoon, userRising);
+    const bestMatch = results[0];
+
+    const mailOptions = {
+        from: process.env.EMAIL_USER,
+        to: email,
+        subject: 'Your Compatibility Results',
+        text: `Your most compatible baseball team is the ${bestMatch.name}!`
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.error('Error sending email:', error);
+            return res.status(500).json({ message: 'Failed to send email' });
+        }
+        console.log('Email sent:', info.response);
+        res.json(results);
+    });
+});
+
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html')); // Adjust path if necessary
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(port, () => {
