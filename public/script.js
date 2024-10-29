@@ -23,6 +23,9 @@ document.getElementById('compatibility-form').addEventListener('submit', functio
             // Display compatibility result in HTML
             const resultsDiv = document.getElementById('results');
             resultsDiv.innerHTML = `Your team is the ${data[0].name}`;
+
+            // Clear the email field to indicate successful submission
+            document.getElementById('email').value = '';
         })
         .catch(error => {
             console.error('Error:', error);
