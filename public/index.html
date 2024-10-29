@@ -16,12 +16,17 @@
             <a href="https://www.bratinstitute.com"><img src="./images/yellow.png" alt="logo" height="17px"></a>
         </div>
     </header>
-    <div class="secondary-header">
-        <a href="https://allstars.onrender.com/"><img src="./images/allstars2.png" alt="logo" height="35px"></a>
-        <h2>Baseball Astrological Compatibility Checker</h2>
-    </div>
+        <div style="padding-top: 20px;"><a href="https://allstars.onrender.com/"><img src="./images/allstars.png" alt="logo" height="80px"></a></div>
+        <div style="padding-top: 15px;"><h2>Baseball Astrological Compatibility Checker</h2></div>
     <div class="container">
         <form id="compatibility-form">
+            <!-- Wrapper for images -->
+            <div class="wrapper"  style="padding-top: 20px;">
+                <img src="images/sun.png" alt="sunsign" height="60px">
+                <img src="images/moon.png" alt="moonsign" height="60px">
+                <img src="images/rising.png" alt="risingsign" height="60px">
+            </div><br>
+            
             <!-- Wrapper for labels -->
             <div class="wrapper">
                 <label for="sun-sign">Select Your Sun Sign:</label>
@@ -76,15 +81,16 @@
                     <option value="Pisces">Pisces</option>
                 </select>
             </div><br>
-            <div style="padding-top: 20px;"></div>
-            <label for="email">Enter Your Email:</label>
-            <input type="email" id="email" required>
-            <button type="submit">Find my team</button>
+            <div style="padding-top: 20px; padding-bottom: 40px;"><h3>don't know your sun, moon, or rising/ascendent sign? <a href="https://www.astrologicalassociation.com/chart-calculator/" target="_blank">click here to find out</a></h3></div>
+            <label for="email">Email:</label>
+            <div style="padding-top: 10px;"></div>
+            <input type="email" id="email" required><br>
+            <div style="padding-top: 50px;"><button type="submit">Find my team</button></div>
         </form>
         
         
 
-        <div style="padding-top: 100px;" id="results"></div>
+        <div style="padding-top: 30px;" id="results"></div>
     </div>
 
     <script src="script.js"></script>

@@ -6,8 +6,8 @@
 
 body {
     font-family: Futura;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #220901;
+    color: #fffffa;
     padding-bottom: 2rem;
     text-align: center;
 }
@@ -39,9 +39,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff; /* You can adjust this color */
+    background-color: #DBDBDB;
     padding: 1rem;
-    border-bottom: 1px solid #ddd; /* Optional, for separation */
+    /* border-bottom: 1px solid #ddd;*/
 }
 
 .secondary-header h2 {
@@ -57,17 +57,28 @@ header {
 
 select {
     font-family: Futura;
+    font-size: 1.3rem;
+    background-color: #DBDBDB;
 }
 
 button {
     font-family: Futura;
-    background-color: #FFCE2E;
+    background-color: #D6004B;
+    color: #fffffa;
     padding: 5px;
     font-size: 1.3rem;
 }
 
 label {
     font-size: 1.3rem;
+    font-weight: 100;
+}
+
+input {
+    font-family: Futura;
+    font-size: 1.3rem;
+    text-align: center;
+    background-color: #DBDBDB;
 }
 
 /* Ensure the result image is 40% of the screen width */
@@ -75,4 +86,23 @@ label {
     width: 40%;
     display: block;
     margin: 20px auto; /* Center the image horizontally */
+}
+
+h2 {
+    font-size: 1.6rem;
+    font-weight: 100;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 100;
+    color: #DBDBDB;
+}
+
+#results {
+    font-size: 1.5rem;
+}
+
+a {
+    color: #DBDBDB;
 }
