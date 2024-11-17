@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Futura;
+    font-family: 'Courier New', monospace;
     background-color: #220901;
     color: #fffffa;
     padding-bottom: 2rem;
@@ -56,15 +56,16 @@ header {
 }
 
 select {
-    font-family: Futura;
+    font-family: 'Courier New', monospace;
     font-size: 1.3rem;
     background-color: #DBDBDB;
 }
 
 button {
-    font-family: Futura;
-    background-color: #D6004B;
-    color: #fffffa;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    background-color: rgb(155, 155, 155);
+    color: black;
     padding: 5px;
     font-size: 1.3rem;
 }
@@ -75,7 +76,7 @@ label {
 }
 
 input {
-    font-family: Futura;
+    font-family: 'Courier New', monospace;
     font-size: 1.3rem;
     text-align: center;
     background-color: #DBDBDB;
