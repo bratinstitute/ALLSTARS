@@ -34,7 +34,6 @@ header {
     width: 100%;
 }
 
-
 .secondary-header {
     display: flex;
     justify-content: space-between;
@@ -58,7 +57,15 @@ header {
 select {
     font-family: 'Space Mono', monospace;
     font-size: 1.3rem;
-    background-color: #DBDBDB;
+    background-color: transparent; /* Transparent background */
+    color: white; /* White text for dropdown options */
+    border: 1px solid white; /* Thin white outline */
+    padding: 5px;
+}
+
+select option {
+    background-color: #220901; /* Matches body background */
+    color: white; /* White text for dropdown options */
 }
 
 button {
@@ -79,7 +86,14 @@ input {
     font-family: 'Space Mono', monospace;
     font-size: 1.3rem;
     text-align: center;
-    background-color: #DBDBDB;
+    background-color: transparent; /* Transparent background */
+    border: 1px solid white; /* Thin white outline */
+    color: white; /* Text color */
+    padding: 5px;
+}
+
+input::placeholder {
+    opacity: 0.6; /* Adjust transparency (0.0 to 1.0) */
 }
 
 /* Ensure the result image is 40% of the screen width */
