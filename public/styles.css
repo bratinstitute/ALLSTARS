@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Courier New', monospace;
+    font-family: 'Space Mono', monospace;
     background-color: #220901;
     color: #fffffa;
     padding-bottom: 2rem;
@@ -56,13 +56,13 @@ header {
 }
 
 select {
-    font-family: 'Courier New', monospace;
+    font-family: 'Space Mono', monospace;
     font-size: 1.3rem;
     background-color: #DBDBDB;
 }
 
 button {
-    font-family: 'Courier New', monospace;
+    font-family: 'Space Mono', monospace;
     font-weight: bold;
     background-color: rgb(155, 155, 155);
     color: black;
@@ -76,7 +76,7 @@ label {
 }
 
 input {
-    font-family: 'Courier New', monospace;
+    font-family: 'Space Mono', monospace;
     font-size: 1.3rem;
     text-align: center;
     background-color: #DBDBDB;
