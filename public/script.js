@@ -20,9 +20,10 @@ document.getElementById('compatibility-form').addEventListener('submit', functio
             return response.json();
         })
         .then(data => {
-            // Display compatibility result in HTML
+            // Display compatibility result in the #results div
             const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = `Your team is the ${data[0].name}`;
+            resultsDiv.innerHTML = `Your team is the ${data[0].name}!`;
+            resultsDiv.scrollIntoView({ behavior: 'smooth' }); // Smoothly scroll to the results
 
             // Clear the email field to indicate successful submission
             document.getElementById('email').value = '';

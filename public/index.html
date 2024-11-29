@@ -10,101 +10,133 @@
 <body>
     <header>
         <div>
-            <a href="https://www.bratinstitute.com/BASEBALL"><img src="./images/logo.png" alt="logo" height="17px"></a>
+            <a href="https://www.bratinstitute.com/BASEBALL">
+                <img src="./images/logo.png" alt="BRAT Institute Logo" height="17px">
+            </a>
         </div>
         <div>
-            <a href="https://www.bratinstitute.com"><img src="./images/yellow.png" alt="logo" height="17px"></a>
+            <a href="https://www.bratinstitute.com">
+                <img src="./images/yellow.png" alt="Yellow Icon" height="17px">
+            </a>
         </div>
     </header>
-        <div style="padding-top: 20px;"><a href="https://allstars.onrender.com/"><img src="./images/allstars.png" alt="logo" height="80px"></a></div>
-        <div style="padding-top: 15px;"><h2>Baseball Astrological Compatibility Checker</h2></div>
-    <div class="container">
-        <form id="compatibility-form">
-            <!-- Wrapper for images -->
-            <div class="wrapper" style="padding-top: 20px;">
-                <img src="images/SunBall.gif" alt="sunsign" height="100px">
-                <img src="images/MoonBaseball.gif" alt="moonsign" height="100px">
-                <img src="images/RisingBall.gif" alt="risingsign" height="100px">
-            </div><br>
-            
-            <!-- Wrapper for labels -->
-            <div class="wrapper">
-                <label for="sun-sign">Select Your Sun Sign:</label>
-                <label for="moon-sign">Select Your Moon Sign:</label>
-                <label for="rising-sign">Select Your Rising Sign:</label>
-            </div><br>
-        
-            <!-- Wrapper for dropdowns -->
-            <div class="wrapper">
-                <select id="sun-sign">
-                    <option value="Aries">Aries</option>
-                    <option value="Taurus">Taurus</option>
-                    <option value="Gemini">Gemini</option>
-                    <option value="Cancer">Cancer</option>
-                    <option value="Leo">Leo</option>
-                    <option value="Virgo">Virgo</option>
-                    <option value="Libra">Libra</option>
-                    <option value="Scorpio">Scorpio</option>
-                    <option value="Sagittarius">Sagittarius</option>
-                    <option value="Capricorn">Capricorn</option>
-                    <option value="Aquarius">Aquarius</option>
-                    <option value="Pisces">Pisces</option>
-                </select>
-        
-                <select id="moon-sign">
-                    <option value="Aries">Aries</option>
-                    <option value="Taurus">Taurus</option>
-                    <option value="Gemini">Gemini</option>
-                    <option value="Cancer">Cancer</option>
-                    <option value="Leo">Leo</option>
-                    <option value="Virgo">Virgo</option>
-                    <option value="Libra">Libra</option>
-                    <option value="Scorpio">Scorpio</option>
-                    <option value="Sagittarius">Sagittarius</option>
-                    <option value="Capricorn">Capricorn</option>
-                    <option value="Aquarius">Aquarius</option>
-                    <option value="Pisces">Pisces</option>
-                </select>
-        
-                <select id="rising-sign">
-                    <option value="Aries">Aries</option>
-                    <option value="Taurus">Taurus</option>
-                    <option value="Gemini">Gemini</option>
-                    <option value="Cancer">Cancer</option>
-                    <option value="Leo">Leo</option>
-                    <option value="Virgo">Virgo</option>
-                    <option value="Libra">Libra</option>
-                    <option value="Scorpio">Scorpio</option>
-                    <option value="Sagittarius">Sagittarius</option>
-                    <option value="Capricorn">Capricorn</option>
-                    <option value="Aquarius">Aquarius</option>
-                    <option value="Pisces">Pisces</option>
-                </select>
-            </div><br>
-            <div style="padding-top: 20px; padding-bottom: 40px;"><h3>don't know your sun, moon, or rising/ascendent sign? <a href="https://www.astrologicalassociation.com/chart-calculator/" target="_blank">click here to find out</a></h3></div>
-            
-            <!-- Input box with placeholder -->
-            <input type="email" id="email" placeholder="email" required><br>
-            <div style="padding-top: 10px;"><button type="submit">FIND MY TEAM</button></div>
-            <div class="container">
-                <div class="item"><h4>DISCLAIMER: By submitting this form, I consent to receiving emails from ALLSTARS. I understand that I may unsubscribe from these emails at any time by replying "STOP" or "UNSUBSCRIBE" to sender.
-                    <br>
-                    <br>The only data that ALLSTARS collects from its users are the email addresses they provide and their most compatible teams.</h4></div>
-            </div>            
-        </form>
 
-        <div style="padding-top: 30px;" id="results"></div>
-    </div>
+    <main>
+        <div style="padding-top: 20px;">
+            <a href="https://allstars.onrender.com/">
+                <img src="./images/allstars.png" alt="ALLSTARS Logo" height="80px">
+            </a>
+        </div>
+        <div style="padding-top: 15px;">
+            <h2>Baseball Astrological Compatibility Checker</h2>
+        </div>
+
+        <div class="container">
+            <form id="compatibility-form">
+                <!-- Wrapper for images -->
+                <div class="wrapper" style="padding-top: 20px;">
+                    <img src="images/SunBall.gif" alt="Sun Sign" height="100px">
+                    <img src="images/MoonBaseball.gif" alt="Moon Sign" height="100px">
+                    <img src="images/RisingBall.gif" alt="Rising Sign" height="100px">
+                </div><br>
+
+                <!-- Wrapper for labels -->
+                <div class="wrapper">
+                    <label for="sun-sign">Select Your Sun Sign:</label>
+                    <label for="moon-sign">Select Your Moon Sign:</label>
+                    <label for="rising-sign">Select Your Rising Sign:</label>
+                </div><br>
+
+                <!-- Wrapper for dropdowns -->
+                <div class="wrapper">
+                    <select id="sun-sign">
+                        <option value="Aries">Aries</option>
+                        <option value="Taurus">Taurus</option>
+                        <option value="Gemini">Gemini</option>
+                        <option value="Cancer">Cancer</option>
+                        <option value="Leo">Leo</option>
+                        <option value="Virgo">Virgo</option>
+                        <option value="Libra">Libra</option>
+                        <option value="Scorpio">Scorpio</option>
+                        <option value="Sagittarius">Sagittarius</option>
+                        <option value="Capricorn">Capricorn</option>
+                        <option value="Aquarius">Aquarius</option>
+                        <option value="Pisces">Pisces</option>
+                    </select>
+
+                    <select id="moon-sign">
+                        <option value="Aries">Aries</option>
+                        <option value="Taurus">Taurus</option>
+                        <option value="Gemini">Gemini</option>
+                        <option value="Cancer">Cancer</option>
+                        <option value="Leo">Leo</option>
+                        <option value="Virgo">Virgo</option>
+                        <option value="Libra">Libra</option>
+                        <option value="Scorpio">Scorpio</option>
+                        <option value="Sagittarius">Sagittarius</option>
+                        <option value="Capricorn">Capricorn</option>
+                        <option value="Aquarius">Aquarius</option>
+                        <option value="Pisces">Pisces</option>
+                    </select>
+
+                    <select id="rising-sign">
+                        <option value="Aries">Aries</option>
+                        <option value="Taurus">Taurus</option>
+                        <option value="Gemini">Gemini</option>
+                        <option value="Cancer">Cancer</option>
+                        <option value="Leo">Leo</option>
+                        <option value="Virgo">Virgo</option>
+                        <option value="Libra">Libra</option>
+                        <option value="Scorpio">Scorpio</option>
+                        <option value="Sagittarius">Sagittarius</option>
+                        <option value="Capricorn">Capricorn</option>
+                        <option value="Aquarius">Aquarius</option>
+                        <option value="Pisces">Pisces</option>
+                    </select>
+                </div><br>
+
+                <!-- Info link -->
+                <div style="padding-top: 20px; padding-bottom: 40px;">
+                    <h3>
+                        Don't know your sun, moon, or rising/ascendent sign? 
+                        <a href="https://www.astrologicalassociation.com/chart-calculator/" target="_blank">Click here to find out</a>
+                    </h3>
+                </div>
+
+                <!-- Input box -->
+                <input type="email" id="email" placeholder="Enter your email" required><br>
+                <div style="padding-top: 10px;">
+                    <button type="submit">FIND MY TEAM</button>
+                </div>
+
+                <!-- Results display -->
+                <div style="padding-top: 30px;" id="results"></div>
+
+                <!-- Disclaimer -->
+                <div class="container">
+                    <div class="item">
+                        <h4>
+                            DISCLAIMER: By submitting this form, I consent to receiving emails from ALLSTARS. 
+                            I understand that I may unsubscribe from these emails at any time by replying "STOP" or "UNSUBSCRIBE" to the sender.
+                            <br><br>
+                            The only data that ALLSTARS collects from its users are the email addresses they provide and their most compatible teams.
+                        </h4>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
 
     <script src="script.js"></script>
 
+    <!-- Footer -->
     <div id="footer"></div>
-      <script>
-         fetch('footer.html')
-             .then(response => response.text())
-             .then(data => {
-                 document.getElementById('footer').innerHTML = data;
-             });
-     </script>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
 </body>
 </html>
