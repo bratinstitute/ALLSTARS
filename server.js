@@ -1,6 +1,5 @@
 require('dotenv').config();
 const express = require('express');
-const nodemailer = require('nodemailer');
 const path = require('path');
 
 const app = express();
@@ -66,40 +65,18 @@ const calculateCompatibility = (userSun, userMoon, userRising) => {
     }).sort((a, b) => b.score - a.score);
 };
 
-// Email setup
-const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-    }
-});
 
 app.get('/compatibility', (req, res) => {
-    const { s, m, r, email } = req.query;
+    const { s, m, r } = req.query;
+
+    if (!s || !m || !r) return res.status(400).json({ message: 'Missing parameters' });
 
     const userSun = { element: elements[s] };
     const userMoon = { element: elements[m] };
     const userRising = { element: elements[r] };
 
     const results = calculateCompatibility(userSun, userMoon, userRising);
-    const bestMatch = results[0];
-
-    const mailOptions = {
-        from: process.env.EMAIL_USER,
-        to: email,
-        subject: 'Your Compatibility Results',
-        text: `Your most compatible baseball team is the ${bestMatch.name}!`
-    };
-
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.error('Error sending email:', error);
-            return res.status(500).json({ message: 'Failed to send email' });
-        }
-        console.log('Email sent:', info.response);
-        res.json(results);
-    });
+    res.json(results);
 });
 
 app.get('/', (req, res) => {
